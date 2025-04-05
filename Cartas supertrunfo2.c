@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     printf("Super Trunfo!\n");
 
     // Declaração e inicialização das variáveis para a primeira carta
@@ -18,11 +19,11 @@ int main() {
     // Solicita os dados para a Carta 1
     printf("\n***** Carta 1 *****\n");
     printf("Digite o Estado (ex: A):\n ");
-    scanf(" %c", &estado1);  // Espaço antes para limpar o buffer
+    scanf(" %c", &estado1); // Espaço antes para limpar o buffer
     printf("Digite o código da carta (ex: A01):\n ");
     scanf("%s", codigo1);
     printf("Digite o nome da cidade (ex: São Paulo):\n ");
-    scanf(" %[^\n]", cidade1);  // Captura até a nova linha
+    scanf(" %[^\n]", cidade1); // Captura até a nova linha
     printf("Digite a população (ex: 12325000):\n ");
     scanf("%lu", &populacao1);
     printf("Digite a área da cidade (ex: 1521.11):\n ");
@@ -51,11 +52,11 @@ int main() {
     // Solicita os dados para a Carta 2
     printf("\n***** Carta 2 *****\n");
     printf("Digite o Estado (ex: B):\n ");
-    scanf(" %c", &estado2);  // Espaço antes para limpar o buffer
+    scanf(" %c", &estado2); // Espaço antes para limpar o buffer
     printf("Digite o código da carta (ex: B02):\n ");
     scanf("%s", codigo2);
     printf("Digite o nome da cidade(ex: Rio de Janeiro):\n ");
-    scanf(" %[^\n]", cidade2);  // Captura até a nova linha
+    scanf(" %[^\n]", cidade2); // Captura até a nova linha
     printf("Digite a população (ex: 6748000):\n ");
     scanf("%lu", &populacao2);
     printf("Digite a área da cidade (ex:1200.25):\n ");
@@ -68,15 +69,6 @@ int main() {
     densidade2 = (float)populacao2 / area2;
     divisaopib2 = (pib2 * 1e9) / populacao2; // Convertendo PIB de bilhões para milhões
     super_poder2 = (float)populacao2 + area2 + pib2 + pontos2 + (1 / densidade2) + divisaopib2;
-
-    // Comparação de cada atributo (exceto estado, código e nome)
-    int vencedor_populacao = (populacao1 > populacao2) ? 1 : 2;
-    int vencedor_area = (area1 > area2) ? 1 : 2;
-    int vencedor_pib = (pib1 > pib2) ? 1 : 2;
-    int vencedor_pontos = (pontos1 > pontos2) ? 1 : 2;
-    int vencedor_densidade = (densidade1 < densidade2) ? 1 : 2; // Menor densidade vence
-    int vencedor_pib_per_capita = (divisaopib1 > divisaopib2) ? 1 : 2;
-    int vencedor_super_poder = (super_poder1 > super_poder2) ? 1 : 2;
 
     // Exibição dos dados da primeira carta
     printf("\n***** Carta 1 *****\n");
@@ -102,16 +94,66 @@ int main() {
     printf("Densidade populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per capita R$: %.2f\n", divisaopib2);
 
-    // Exibição do vencedor de cada critério
+    // Comparação automática de um atributo escolhido no código
     printf("\n***** Comparação *****\n");
 
-    printf("Vencedor por População: Carta %d\n", vencedor_populacao);
-    printf("Vencedor por Área: Carta %d\n", vencedor_area);
-    printf("Vencedor por PIB: Carta %d\n", vencedor_pib);
-    printf("Vencedor por Pontos Turísticos: Carta %d\n", vencedor_pontos);
-    printf("Vencedor por Densidade Populacional: Carta %d\n", vencedor_densidade);
-    printf("Vencedor por PIB per Capita: Carta %d\n", vencedor_pib_per_capita);
-    printf("Vencedor por Super Poder: Carta %d\n", vencedor_super_poder);
+    if (populacao1 >=populacao2) {
+        //bloco de codigo a ser executado se a condição for verdadeira.
+        printf("\nPopulação: Carta 1 venceu!\n");
+    }
+    else {
+        printf("\nPopulação: Carta 1 perdeu!\n");
+    }
+
+
+    if (area1 >=area2) {
+        //bloco de codigo a ser executado se a condição for verdadeira.
+        printf("\nÁrea: Carta 1 venceu!\n");
+    }
+    else {
+        printf("\nÁrea: Carta 1 perdeu!\n");
+    }
+
+
+    if (pib1 >=pib2) {
+        //bloco de codigo a ser executado se a condição for verdadeira.
+        printf("\nPib: Carta 1 Venceu!\n");
+    }
+    else {
+        printf("\nPib: Carta 1 Perdeu!\n");
+    }
+
+
+    if (pontos1 >=pontos2) {
+        //bloco de codigo a ser executado se a condição for verdadeira.
+        printf("\nPontos Turísticos: Carta 1 Venceu!\n");
+    }
+    else {
+        printf("\nPontos Turísticos: Carta 1 Perdeu!\n");
+    }
+
+
+    if (densidade1 >=densidade2) {
+        //bloco de codigo a ser executado se a condição for verdadeira.
+        printf("\nDensidade Populacional: Carta 1 Venceu!\n");
+    }
+    else {
+        printf("\nDensidade Populacional: Carta 1 Perdeu!\n");
+    }
+
+
+    if (divisaopib1 >=divisaopib2) {
+        //bloco de codigo a ser executado se a condição for verdadeira.
+        printf("\nPib per Capta: Carta 1 Venceu!\n");
+    }
+    else {
+        printf("\nPib per Capta: Carta 1 Perdeu!\n");
+    }
+
+
+
+    
+   
 
     return 0;
 }
